@@ -1,0 +1,17 @@
+--Criacao do Banco de Dados no SQL 
+CREATE DATABASE fluig COLLATE Latin1_General_CI_AS; 
+
+Go
+
+--Para utilizar versoes do SQL Server acima da versão 2012, temos que primeiramente alterar a compatibilidade do Banco de Dados SQL 
+ALTER DATABASE fluig SET COMPATIBILITY_LEVEL = 110;
+
+Go 
+
+--Alteracao da propriedade do Banco de Dados Fluig, para o Usuario smartsiga 
+USE fluig EXEC sp_changedbowner 'smartsiga';
+
+Go 
+
+--Alteracao do isolamento do Bando de Dados SQL fluig 
+ALTER DATABASE fluig SET READ_COMMITTED_SNAPSHOT ON;
